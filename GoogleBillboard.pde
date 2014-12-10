@@ -5,10 +5,22 @@ public void setup()
 }  
 public void draw()  
 {   
-	//not needed for this assignment
+	for(int i = 2; i < e.length() - 10; i++)
+	{
+	String s = e.substring(i, i + 10);
+	double dNum = Double.parseDouble(s);
+	
+	if(isPrime(dNum) == true){
+		System.out.println(s);
+		break;
+	}
+	}
 }  
 public boolean isPrime(double dNum)  
 {   
-    //to be finished later   
-    return true;  
+    if(dNum <= 1){return false;}
+  	for(int i = 2; i <= Math.sqrt(dNum); i++){
+  		if(dNum % i == 0){return false;}
+ 	}
+ 	return true;
 } 
